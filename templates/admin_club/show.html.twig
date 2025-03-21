@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminClubController!{% endblock %}
+
+{% block body %}
+
+<h1>{{ club.label }}</h1>
+<br><br>
+<img src="{{ (club.image) }}">
+<br><br>
+<p>Prix : {{ club.priceTTC }} Euros (hors taxes: {{ club.price }}Euros)</p>
+<br><br>
+<a href="{{ path('shop_category', {id:club.league.id}) }}">{{ club.league.label }}</a>
+
+      
+  
+
+{% endblock body %}

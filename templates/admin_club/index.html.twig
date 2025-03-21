@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<section class="container">
+
+    <table>
+        
+        <tr>
+            <th>Club :</th>
+            <th scope="col">See</th>
+            <th scope="col">Remove</th>
+            <th scope="col">Edit</th>
+
+        </tr>
+        <a href="{{path('app_admin_club_add')}}">Add</a> 
+        {% for club in clubs %}
+                <tr>
+                    <td>
+                        {{club.label}}
+                    </td>
+                    <td>
+                        <a href="{{ path('app_admin_club_show', {'id': club.id}) }}">Voir</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('app_admin_club_delete', {'id': club.id}) }}">Supprimer</a>
+                    </td>
+                    <td> 
+                        <a href="{{path('app_admin_club_edit',{id : club.id})}}">Edit</a>                                
+                    </td>
+
+                </tr>
+                
+            </tbody>
+        {% endfor %}
+    </table>
+</section> 
+
+{% endblock body %}

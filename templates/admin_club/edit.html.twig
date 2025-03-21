@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminCategoryController!{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+
+{{ form_row(form.label) }}
+<br>
+{{ form_row(form.yearAt) }}
+<br>
+{{ form_row(form.image) }}
+<br>
+{{ form_row(form.price) }}
+<br>
+{{ form_row(form.createdAt) }}
+<br>
+{{ form_row(form.country) }}
+<br>
+{{ form_row(form.league) }}
+<br>
+{{ form_row(form.category) }}
+<br>
+<button type="submit">Soumettre</button>
+
+{{ form_end(form) }}
+{% endblock %}
