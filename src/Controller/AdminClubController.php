@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Club;
 use App\Form\ClubType;
+use App\Repository\CategoryRepository;
 use App\Repository\ClubRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,8 +30,10 @@ final class AdminClubController extends AbstractController
     {
         $club = $ClubRepository->find($id);
 
+
         return $this->render('admin_club/show.html.twig', [
-            'club' => $club
+            'club' => $club,
+
         ]);
     }
 
